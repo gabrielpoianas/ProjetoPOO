@@ -1,19 +1,27 @@
 package main;
 
 import modelo.Financiamento;
+import util.InterfaceUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
+        Scanner mainScanner = new Scanner(System.in);
 
         List<Financiamento> listaFinanciamentos = new ArrayList<>();
 
-        //System.out.print("Quantos financiamentos deseja realizar: ");
-        listaFinanciamentos.add(new Financiamento());
+        System.out.print("Quantos financiamentos deseja realizar: ");
+        int quantidade = mainScanner.nextInt();
+
+        while(quantidade !=0) {
+            listaFinanciamentos.add(new Financiamento());
+            quantidade--;
+        }
 
         double somaImoveis = 0, somaFinanciamentos = 0;
         for(Financiamento financiamento : listaFinanciamentos){

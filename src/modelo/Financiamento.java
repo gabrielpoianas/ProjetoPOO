@@ -50,5 +50,6 @@ public class Financiamento extends InterfaceUsuario {
         super.pedirValorImovel();
         super.pedirPrazoFinanciamento();
         super.pedirTaxaJurosAnual();
+        System.out.println("-----------------------------------------------------------------------------------");
     }
 }
