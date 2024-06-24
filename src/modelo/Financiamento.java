@@ -8,30 +8,32 @@ public class Financiamento extends InterfaceUsuario {
     private int prazoFinanciamento;
     private double taxaJurosAnual;
 
+    //Construtor inserindo dados manuais
     public Financiamento(double valorImovel, int prazoFinanciamento, double taxaJurosAnual) {
         this.valorImovel = valorImovel;
         this.prazoFinanciamento = prazoFinanciamento;
         this.taxaJurosAnual = taxaJurosAnual;
     }
 
+    //Construtor solicitando dados ao usuário
+    public Financiamento(){
+        executarFinanciamento();
+    }
+
     public double getValorImovel() {
+        this.valorImovel = this.valor;
         return this.valorImovel;
     }
 
-//    public double getValorImovel() {
-//        this.valorImovel =  super.pedirValorImovel();
-//        return this.valorImovel;
-//    }
-//
-//    public int getPrazoFinanciamento(){
-//        this.prazoFinanciamento = super.pedirPrazoFinanciamento();
-//        return this.prazoFinanciamento;
-//    }
-//
-//    public double getTaxaJurosAnual() {
-//        this.taxaJurosAnual = super.pedirTaxaJurosAnual();
-//        return this.taxaJurosAnual;
-//    }
+    public int getPrazoFinanciamento(){
+        this.prazoFinanciamento = this.prazo;
+        return this.prazoFinanciamento;
+    }
+
+    public double getTaxaJurosAnual() {
+        this.taxaJurosAnual = this.taxa;
+        return this.taxaJurosAnual;
+    }
 
     //Método para calcular o valor do pagamento mensal do financiamento
     public double calcularPagamentoMensal(){
@@ -40,13 +42,13 @@ public class Financiamento extends InterfaceUsuario {
 
     //Método para calcular o valor total do financiamento
     public double calcularTotalFinanciamento(){
-        return this.calcularPagamentoMensal() * this.prazoFinanciamento * 12;
+        return this.calcularPagamentoMensal() * (this.prazoFinanciamento * 12);
     }
 
 
-//    public void executarFinanciamento(){
-//        this.getValorImovel();
-//        this.getPrazoFinanciamento();
-//        this.getTaxaJurosAnual();
-//    }
+    public void executarFinanciamento(){
+        super.pedirValorImovel();
+        super.pedirPrazoFinanciamento();
+        super.pedirTaxaJurosAnual();
+    }
 }
