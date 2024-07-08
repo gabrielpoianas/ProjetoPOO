@@ -37,13 +37,13 @@ public class Financiamento extends InterfaceUsuario {
 
     //Método para calcular o valor do pagamento mensal do financiamento
     public double calcularPagamentoMensal(){
-        return (this.valorImovel / (this.prazoFinanciamento * 12)) * (1 + (this.taxaJurosAnual / 12));
+       return (this.valorImovel / (this.prazoFinanciamento * 12)) * (1 + (this.taxaJurosAnual / 12));
     }
 
     //Método para calcular o valor total do financiamento
-    public double calcularTotalFinanciamento(){
-        return this.calcularPagamentoMensal() * (this.prazoFinanciamento * 12);
-    }
+   // public double calcularTotalFinanciamento(){
+   //     return this.calcularPagamentoMensal() * (this.prazoFinanciamento * 12);
+    //}
 
 
     public void executarFinanciamento(){

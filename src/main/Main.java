@@ -1,5 +1,6 @@
 package main;
 
+import modelo.Apartamento;
 import modelo.Financiamento;
 import util.InterfaceUsuario;
 
@@ -13,22 +14,28 @@ public class Main{
         Locale.setDefault(Locale.US);
         Scanner mainScanner = new Scanner(System.in);
 
-        List<Financiamento> listaFinanciamentos = new ArrayList<>();
+        List<Apartamento> listaFinanciamentos = new ArrayList<>();
 
         System.out.print("Quantos financiamentos deseja realizar: ");
         int quantidade = mainScanner.nextInt();
 
         while(quantidade !=0) {
-            listaFinanciamentos.add(new Financiamento());
+            listaFinanciamentos.add(new Apartamento());
             quantidade--;
         }
 
         double somaImoveis = 0, somaFinanciamentos = 0;
-        for(Financiamento financiamento : listaFinanciamentos){
-            double totalFinanciado = financiamento.getValorImovel() / financiamento.getPrazoFinanciamento() * 12 * (1 + financiamento.getTaxaJurosAnual() / 12);
+        for(Apartamento financiamento : listaFinanciamentos){
+            /*double totalFinanciado = financiamento.getValorImovel() / financiamento.getPrazoFinanciamento() * 12 * (1 + financiamento.getTaxaJurosAnual() / 12);
             System.out.printf("Financiamento - valor do imóvel: R$%.2f, valor do financiamento: R$%.2f\n", financiamento.getValorImovel(), totalFinanciado);
             somaImoveis += financiamento.getValorImovel();
             somaFinanciamentos += financiamento.calcularTotalFinanciamento();
+
+             */
+
+
+            System.out.println(financiamento.getValorImovel());
+            System.out.println(financiamento.calcularPagamentoMensal());
         }
         System.out.println("-----------------------------------------------------------------------------------");
         System.out.printf("Valor total dos imóveis: R$%.2f, Valor total dos financiamentos: R$%.2f\n", somaImoveis, somaFinanciamentos);
